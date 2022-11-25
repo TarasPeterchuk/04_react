@@ -1,17 +1,33 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const rootElement = document.querySelector('#root');
+
+// const renderGreeting = elem => {
+//   const containerElem = document.createElement('div');
+//   containerElem.classList.add('greeting');
+
+//   const titleElem = document.createElement('h1');
+//   titleElem.classList.add('greeting__title');
+//   titleElem.textContent = 'Hello, world!';
+
+//   const textElem = document.createElement('p');
+//   textElem.classList.add('greeting__text');
+//   textElem.textContent = 'I'am learning React';
+
+//   containerElem.append(titleElem, textElem);
+
+//   elem.append(containerElem);
+// };
+
+// renderGreeting(rootElement);
+
+const element = (
+  <div className="greeting">
+    <h1 className="greeting__title">Hello, world!</h1>
+    <p className="greeting__text">I'm learning React</p>
+  </div>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(element, rootElement);
