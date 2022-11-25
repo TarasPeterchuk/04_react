@@ -14,7 +14,7 @@ const rootElement = document.querySelector('#root');
 
 //   const textElem = document.createElement('p');
 //   textElem.classList.add('greeting__text');
-//   textElem.textContent = 'I am learning React';
+//   textElem.textContent = 'I'am learning React';
 
 //   containerElem.append(titleElem, textElem);
 
@@ -26,7 +26,7 @@ const rootElement = document.querySelector('#root');
 const element = (
   <div className="greeting">
     <h1 className="greeting__title">Hello, world!</h1>
-    <p className="greeting__text">I am learning React</p>
+    <p className="greeting__text">I'am learning React</p>
   </div>
 );
 
