@@ -8,16 +8,16 @@ class Toggler extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      onoff: 'off',
+      onoff: 'Off',
     };
   }
   toggleButton = () => {
-    this.state.onoff === 'off'
+    this.state.onoff === 'Off'
       ? this.setState({
-          onoff: 'on',
+          onoff: 'On',
         })
       : this.setState({
-          onoff: 'off',
+          onoff: 'Off',
         });
   };
   render() {
