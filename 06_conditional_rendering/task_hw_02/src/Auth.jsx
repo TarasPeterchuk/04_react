@@ -26,13 +26,13 @@ class Auth extends React.Component {
   handleLogin = () => {
     this.setSpinnerVisible();
     this.setState({
-      isLoggedIn: true,
+      isLoggedIn: false,
     });
   };
   handleLogout = () => {
     this.setSpinnerVisible();
     this.setState({
-      isLoggedIn: false,
+      isLoggedIn: true,
     });
   };
 
@@ -42,9 +42,9 @@ class Auth extends React.Component {
         {this.state.spinnerVisible ? (
           <Spinner size={50} />
         ) : this.state.isLoggedIn ? (
-          <Login onLogin={this.handleLogout} />
+          <Login onLogin={this.handleLogin} />
         ) : (
-          <Logout onLogout={this.handleLogin} />
+          <Logout onLogout={this.handleLogout} />
         )}
       </>
     );
