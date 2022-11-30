@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Greeting from './Greeting';
-// import Login from './Login';
-// import Logout from './Logout';
+import Login from './Login';
+import Logout from './Logout';
 
 class Auth extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: false,
+      isLoggedIn: true,
     };
   }
   handleLogin = () => {
@@ -22,28 +22,15 @@ class Auth extends React.Component {
   };
 
   render() {
-    // const button = this.state.isLoggedIn ? (
-    //   <button onClick={this.handleLogout}>Logout</button>
-    // ) : (
-    //   <button onClick={this.handleLogin}>Login</button>
-    // );
-
-    // if (this.state.isLoggedIn) {
-    //   button = <button onClick={this.handleLogout}>Logout</button>;
-    // } else {
-    //   button = <button onClick={this.handleLogin}>Login</button>;
-    // }
     return (
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn} />
 
         {this.state.isLoggedIn ? (
-          <button onClick={this.handleLogout}>Logout</button>
+          <Login onLogin={this.handleLogout} />
         ) : (
-          <button onClick={this.handleLogin}>Login</button>
+          <Logout onLogout={this.handleLogin} />
         )}
-
-        {/* {this.state.isLoggedIn ? <Login /> : <Logout />} */}
       </div>
     );
   }
