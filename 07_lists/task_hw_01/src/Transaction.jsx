@@ -3,7 +3,6 @@ import moment from 'moment';
 
 // const Transaction = (transaction) => {
 const Transaction = ({ from, to, amount, rate, time }) => {
-  moment.locale('en-gb');
   return (
     <li className="transaction">
       <span className="transaction__date">{moment(time).format('D  MMM')}</span>
