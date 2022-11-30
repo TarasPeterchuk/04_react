@@ -9,7 +9,7 @@ const Transaction = (transaction) => {
         {moment(transaction.time).format('D  MMM')}
       </span>
       <span className="transaction__time">
-        {moment(transaction.time).format('LT')}
+        {moment(transaction.time).format('HH:mm')}
       </span>
       <span className="transaction__assets">
         {transaction.from} → {transaction.to}
