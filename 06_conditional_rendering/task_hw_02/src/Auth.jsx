@@ -30,7 +30,6 @@ class Auth extends React.Component {
     });
   };
   handleLogout = () => {
-    this.setSpinnerVisible();
     this.setState({
       isLoggedIn: false,
     });
