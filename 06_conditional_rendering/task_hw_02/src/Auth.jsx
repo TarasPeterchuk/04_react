@@ -42,9 +42,9 @@ class Auth extends React.Component {
         {this.state.spinnerVisible ? (
           <Spinner size={50} />
         ) : this.state.isLoggedIn ? (
-          <Logout onLogout={this.handleLogout} />
+          <Login onLogin={this.handleLogout} />
         ) : (
-          <Login onLogin={this.handleLogin} />
+          <Logout onLogout={this.handleLogin} />
         )}
       </>
     );
