@@ -3,12 +3,6 @@ import React, { Component } from 'react';
 class UserForm extends Component {
   // constructor(props) {
   //   super(props);
-  //   this.state = {
-  //     name: '',
-  //     student: '',
-  //     occupation: '',
-  //     about: '',
-  //   };
   // }
 
   handleChange = (event) => {
