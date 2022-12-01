@@ -5,7 +5,8 @@ class Dimensions extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize);
-    const { innerWidth, innerHeight } = window;
+    // const { innerWidth, innerHeight } = window;
+
     this.setDimension(innerWidth, innerHeight);
   }
   componentWillUnmount() {
@@ -13,7 +14,7 @@ class Dimensions extends Component {
   }
 
   onResize = (e) => {
-    const {} = e.target;
+    // const { innerWidth, innerHeight } = e.target;
     this.setDimension(innerWidth, innerHeight);
   };
 
