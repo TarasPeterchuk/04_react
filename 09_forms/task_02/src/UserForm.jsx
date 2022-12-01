@@ -18,8 +18,8 @@ class UserForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // this.props.appFunc(this.state);
-    console.log(this.state);
+    this.props.appFunc(this.state);
+    // console.log(this.state);
   };
   render() {
     return (
