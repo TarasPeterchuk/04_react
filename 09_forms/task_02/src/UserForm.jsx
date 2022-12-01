@@ -16,14 +16,17 @@ class UserForm extends Component {
     });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = (func, event) => {
     event.preventDefault();
-    this.props.appFunc(this.state);
+    func(this.state);
     // console.log(this.state);
   };
   render() {
     return (
-      <form className="login-form" onSubmit={this.handleSubmit}>
+      <form
+        className="login-form"
+        onSubmit={() => this.handleSubmit(this.props.appFunc, event)}
+      >
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
