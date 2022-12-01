@@ -12,12 +12,13 @@ class UserForm extends Component {
     const { name, value, checked, type } = event.target;
     const val = type === 'checkbox' ? checked : value;
     this.setState({
-      [name]: val.toUpperCase(),
+      [name]: val,
     });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
+    // this.props.appFunc(this.state);
     console.log(this.state);
   };
   render() {
