@@ -25,7 +25,7 @@ class UserForm extends Component {
     return (
       <form
         className="login-form"
-        onSubmit={() => this.handleSubmit(this.props.appFunc, event)}
+        onSubmit={() => this.handleSubmit(this.props.onSubmit, event)}
       >
         <h1 className="form-title">Profile</h1>
         <div className="form-control">

@@ -5,7 +5,7 @@ const App = () => {
   const createUser = (obj) => console.log(obj);
   return (
     <>
-      <UserForm appFunc={createUser} />
+      <UserForm onSubmit={createUser} />
     </>
   );
 };
