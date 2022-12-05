@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BoilingVerdict from './BoilingVerdict';
 
 class Calculator extends Component {
   constructor(props) {

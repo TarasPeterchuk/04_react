@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ShoppingCart = ({ userData, handleChange }) => {
+const UserForm = ({ userData, handleChange }) => {
   return (
     <form className="user-form">
       <input
@@ -21,4 +21,4 @@ const ShoppingCart = ({ userData, handleChange }) => {
   );
 };
 
-export default ShoppingCart;
+export default UserForm;
