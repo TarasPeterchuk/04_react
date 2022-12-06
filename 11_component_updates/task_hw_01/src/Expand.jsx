@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
-import Child from './Child';
 
 class Expand extends Component {
   state = { isOpen: false };
