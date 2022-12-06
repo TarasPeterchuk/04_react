@@ -25,7 +25,7 @@ class Expand extends Component {
           </button>
         </div>
         <div className="expand__content">
-          <Child isOpen={this.state.isOpen}>{this.props.children}</Child>
+          {this.state.isOpen && this.props.children}
         </div>
       </div>
     );
