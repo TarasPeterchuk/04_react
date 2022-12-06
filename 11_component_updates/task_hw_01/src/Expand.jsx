@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import 'font-awesome/css/font-awesome.css';
+
 import PropTypes from 'prop-types';
 import Child from './Child';
 
@@ -12,12 +12,16 @@ class Expand extends Component {
     });
   };
   render() {
+    let arrowClass;
+    if (this.state.isOpen) {
+      arrowClass = 'fas fa-chevron-up';
+    } else arrowClass = 'fas fa-chevron-down';
     return (
       <div className="expand border">
         <div className="expand__header">
           <span className="expand__title">{this.props.title}</span>
           <button onClick={this.toggleDialog} className="expand__toggle-btn">
-            <i className="fas fa-chevron-up"></i>
+            <i className={arrowClass}></i>
           </button>
         </div>
         <div className="expand__content">
