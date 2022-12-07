@@ -1,34 +1,61 @@
 import React, { Component } from 'react';
 import Task from './Task';
 import CreateTaskInput from './CreateTaskInput';
+import {
+  createTask,
+  fetchTasksList,
+  updateTask,
+  deleteTask,
+} from './tasksGateway';
 
 class TasksList extends Component {
   state = {
-    tasks: [
-      {
-        text: 'Buy nilk',
-        done: true,
-        id: 1,
-      },
-      {
-        text: 'Get sugar',
-        done: false,
-        id: 2,
-      },
-      {
-        text: 'Drive car',
-        done: true,
-        id: 3,
-      },
-    ],
+    tasks: [],
   };
+
+  componentDidMount() {
+    this.fetchTasks();
+  }
+
+  fetchTasks = () => {
+    fetchTasksList().then((tasklist) =>
+      this.setState({
+        tasks: tasklist,
+      })
+    );
+  };
+
+  onCreate = (text) => {
+    const newTask = {
+      text: text,
+      done: false,
+    };
+    createTask(newTask).then(() => this.fetchTasks());
+  };
+
+  handleTaskStatusChange = (id) => {
+    const { done, text } = this.state.tasks.find((task) => task.id === id);
+    const updatedTask = { text, done: !done };
+    updateTask(id, updatedTask).then(() => this.fetchTasks());
+  };
+
+  handleTaskDelete = (id) => {
+    deleteTask(id).then(() => this.fetchTasks());
+  };
+
   render() {
+    const sortedList = this.state.tasks.slice().sort((a, b) => a.done - b.done);
     return (
       <div className="todo-list">
-        <CreateTaskInput />
+        <CreateTaskInput onCreate={this.onCreate} />
         <ul className="list">
-          {this.state.tasks.map((task) => (
-            <Task key={task.id} {...task} />
+          {sortedList.map((task) => (
+            <Task
+              key={task.id}
+              {...task}
+              onChange={this.handleTaskStatusChange}
+              onDelete={this.handleTaskDelete}
+            />
           ))}
         </ul>
       </div>
