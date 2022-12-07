@@ -35,6 +35,4 @@ CreateTaskInput.propTypes = {
   onCreate: PropTypes.func.isRequired,
 };
 
-CreateTaskInput.defaultProps = {};
-
 export default CreateTaskInput;

@@ -16,18 +16,17 @@ export const createTask = (taskData) => {
 };
 
 export const fetchTasksList = () => {
-  return fetch(baseUrl)
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-    })
-    .then((tasksList) =>
-      tasksList.map(({ _id, ...task }) => ({
-        id: _id,
-        ...task,
-      }))
-    );
+  return fetch(baseUrl).then((res) => {
+    if (res.ok) {
+      return res.json();
+    }
+  });
+  // .then((tasksList) =>
+  //   tasksList.map(({ _id, ...task }) => ({
+  //     id: _id,
+  //     ...task,
+  //   }))
+  // )
 };
 
 export const updateTask = (taskId, taskData) => {
