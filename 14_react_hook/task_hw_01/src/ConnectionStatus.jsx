@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import ClassNames from 'classnames';
 
 const ConnectionStatus = () => {
-  let [network, setStatus] = useState('online');
+  const [network, setStatus] = useState('online');
 
   useEffect(() => {
     const handleConnect = () => {
-      setStatus((network = 'online'));
+      setStatus('online');
     };
     const handleDisconnect = () => {
-      setStatus((network = 'offline'));
+      setStatus('offline');
     };
     window.addEventListener('online', handleConnect);
     window.addEventListener('offline', handleDisconnect);
