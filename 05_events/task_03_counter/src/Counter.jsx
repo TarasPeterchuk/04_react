@@ -27,21 +27,13 @@ class Counter extends React.Component {
   render() {
     return (
       <div className="counter">
-        <button
-          data-action="decrease"
-          onClick={this.decrement}
-          className="counter__button"
-        >
+        <button data-action="decrease" onClick={this.decrement} className="counter__button">
           -
         </button>
         <span className="counter__value" onClick={() => this.reset()}>
           {this.state.counter}
         </span>
-        <button
-          data-action="increase"
-          onClick={this.increment}
-          className="counter__button"
-        >
+        <button data-action="increase" onClick={this.increment} className="counter__button">
           +
         </button>
       </div>
