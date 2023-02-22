@@ -7,32 +7,31 @@ class UsersList extends React.Component {
     currentPage: 1,
   };
 
-  onPageDecrement() {
+  onPageDecrement = () => {
     this.setState({
       currentPage: this.state.currentPage - 1,
     });
-  }
+  };
 
-  onPageIncrement() {
+  onPageIncrement = () => {
     this.setState({
       currentPage: this.state.currentPage + 1,
     });
-  }
+  };
 
   render() {
     const { users } = this.props;
-    const indexFrom = (this.state.currentPage - 1) * 3;
-    const indexTo = (this.state.currentPage - 1) * 3 + 3;
-
-    console.log(this.state.currentPage);
+    const itemsPerPage = 3;
+    const indexFrom = (this.state.currentPage - 1) * itemsPerPage;
+    const indexTo = indexFrom + itemsPerPage;
     return (
       <div>
         <Pagination
-          goPrev={() => this.onPageDecrement()}
-          goNext={() => this.onPageIncrement()}
+          goPrev={this.onPageDecrement}
+          goNext={this.onPageIncrement}
           currentPage={this.state.currentPage}
           totalItems={users.length}
-          itemsPerPage={3}
+          itemsPerPage={itemsPerPage}
         />
         <ul className="users">
           {users.slice(indexFrom, indexTo).map(user => (
