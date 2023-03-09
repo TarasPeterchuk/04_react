@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import fetchUser from '../../gateway/user';
+import './user.scss';
 
 const User = () => {
   const [userData, setUserData] = useState(null);
   const { userId } = useParams();
 
   useEffect(() => {
-    fetch(`https://api.github.com/users/${userId}`)
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        throw new Error();
-      })
-      .then(fetchedUserData => setUserData(fetchedUserData));
+    fetchUser(userId).then(fetchedUserData => setUserData(fetchedUserData));
   }, [userId]);
 
   if (!userData) {
